@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Question 1: Programming. Find the shortest path algorithm for lift problem.",
+  "main": "app.ts",
+  "scripts": {
+    "plan": "node --loader ts-node/esm ./src/main.ts"     
+  },
+  "author": "Komiljon Usarov",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^14.14.37",
+    "csv-parser": "^3.0.0",
+    "hcl-parser": "^0.1.0",
+    "js-hcl-parser": "^1.0.1",
+    "ts-node": "^9.1.1"
+  },
+  "devDependencies": {
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  }
+}
