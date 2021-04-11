@@ -88,14 +88,38 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
     }
 
     public getRoutes() {
+
+        this.transports.forEach(element => {
+            if (element.point.at_level != 1) {
+                element.point.at_level = 1
+                this.setRoute(element, `LIFT ${element.id}: GO ${State.DOWN}`);
+                this.setRoute(element, `LIFT ${element.id}: ${State.STOP} ${element.point.at_level}`);
+
+            }
+        });
         return this.routes
     }
 
     private setRoute(transport: any, route: any) {
-        this.routes[transport.id].push(route);
+        // console.log(route);
+
+        if (!this.isDuplicated(transport.id, route))
+            this.routes[transport.id].push(route);
+    }
+
+
+    private isDuplicated(id: any, route: any) {
+        const length = this.routes[id].length
+        if (length == 0) return false
+
+        if (this.routes[id][length - 1] === route) return true
+
+        return false
     }
 
     public getRoute(transport: any): any {
+
+        // if (!this.isThereTask()) return
 
         if (transport.direction && transport.direction == State.DOWN) {
             const route = this.findNearestDown(transport)
@@ -141,6 +165,8 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
             if (downRoute == 1) transport.direction = null
 
             this.setRoute(transport, `LIFT ${transport.id}: GO ${State.DOWN}`);
+            if (downRoute == 1 && logs.length == 0)
+                this.setRoute(transport, `LIFT ${transport.id}: ${State.STOP} ${transport.point.at_level}`);
             return
         }
 
@@ -156,7 +182,7 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
 
             const logs = this.collectItems(transport)
 
-            if (logs && logs.length > 0)
+            if ((logs && logs.length > 0) && this.routes[transport.id].length > 0)
                 this.setRoute(transport, `LIFT ${transport.id}: ${State.STOP} ${transport.point.at_level}`);
 
             this.printOnConsole(transport, logs)
@@ -217,6 +243,14 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
             this.setRoute(transport, `LIFT ${transport.id}: ${State.STOP} ${transport.point.at_level}`);
             this.printOnConsole(transport, collectedLogs)
         }
+    }
+
+    private isThereTask(){
+        
+        for (const item of this.points) {
+            if (!item.state) return true
+        }
+        
     }
 
     private updateMatrix(point: any) {
