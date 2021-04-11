@@ -2,8 +2,10 @@ import { CsvReader, HclReader } from "../../data/file-repositories/file-reader.i
 import { PassengerFileRepository } from "../../data/file-repositories/passenger-file.repository";
 import { StateFileRepository } from "../../data/file-repositories/state-file.repository";
 import { StateService } from "../../domain/services/implementations/state.service";
+import { NearestNeighborAlgorithm } from "../../domain/usecases/algorithms/nearest-neighbor.method";
 import { CentralHubFactory, LiftCentralHub, LiftNotifier, PassengerNotifier } from "../../domain/usecases/centralHub";
-import { LiftCapacity, Lift, LiftRange, LiftTransport, NearestNeighborAlgorithm, Transport } from "../../domain/usecases/transportFactory";
+import { LiftCapacity, LiftRange } from "../../domain/usecases/rulels";
+import { Lift, LiftTransport, Transport } from "../../domain/usecases/transportFactory";
 
 export class ConsoleUI {
     async run(...paths) {
