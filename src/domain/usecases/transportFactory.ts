@@ -19,8 +19,6 @@ export class LiftTransport extends TransportFactory {
     public create(): ITransportService {
         return new SmartLift(this.transports);
     }
-
-
 }
 
 export abstract class Transport {
@@ -63,6 +61,7 @@ export abstract class IRule {
 export interface IRouteOptimizer {
     optimizeRoute(data: any, transports: any): any
     getRoute(data: any): any
+    getRoutes(): any
     isMissionCompleted(): boolean
 }
 
@@ -72,12 +71,28 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
     protected maxLevel: number
     protected points: any[]
     protected waitersAtLevel: number[]
+    protected transports: any[]
+    protected routes = []
 
     public optimizeRoute(data: any, transports: any): any {
         this.points = data
         this.maxLevel = this.getMaxLevel(data, transports)
+        this.transports = transports
         this.populateMap(data)
+
+        transports.forEach(element => {
+            this.routes[element.id] = []
+        });
+
         return this.matrix
+    }
+
+    public getRoutes() {
+        return this.routes
+    }
+
+    private setRoute(transport: any, route: any) {
+        this.routes[transport.id].push(route);
     }
 
     public getRoute(transport: any): any {
@@ -87,9 +102,12 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
             this.update(transport, route)
 
             if (transport.direction && transport.point.at_level > 1)
-                console.log(`LIFT ${transport.id}: GO ${State.DOWN}`);
+                this.setRoute(transport, `LIFT ${transport.id}: GO ${State.DOWN}`);
 
+            if (transport.direction === State.UP && transport.point.at_level < this.maxLevel)
+                this.setRoute(transport, `LIFT ${transport.id}: GO ${State.UP}`);
             return
+
         }
 
         if (transport.direction && transport.direction == State.UP) {
@@ -97,8 +115,8 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
             this.update(transport, route)
 
             if (transport.direction) {
-                if (transport.direction === State.UP) console.log(`LIFT ${transport.id}: GO ${State.UP}`);
-                if (transport.direction === State.DOWN) console.log(`LIFT ${transport.id}: GO ${State.DOWN}`);
+                if (transport.direction === State.UP) this.setRoute(transport, `LIFT ${transport.id}: GO ${State.UP}`);
+                if (transport.direction === State.DOWN) this.setRoute(transport, `LIFT ${transport.id}: GO ${State.DOWN}`);
             }
 
             return
@@ -122,7 +140,7 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
 
             if (downRoute == 1) transport.direction = null
 
-            console.log(`LIFT ${transport.id}: GO ${State.DOWN}`);
+            this.setRoute(transport, `LIFT ${transport.id}: GO ${State.DOWN}`);
             return
         }
 
@@ -130,7 +148,7 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
             transport.direction = State.UP
             const logs = this.collectItems(transport)
             this.printOnConsole(transport, logs)
-            console.log(`LIFT ${transport.id}: GO ${State.UP}`);
+            this.setRoute(transport, `LIFT ${transport.id}: GO ${State.UP}`);
             return
         }
 
@@ -139,12 +157,12 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
             const logs = this.collectItems(transport)
 
             if (logs && logs.length > 0)
-                console.log(`LIFT ${transport.id}: ${State.STOP} ${transport.point.at_level}`);
+                this.setRoute(transport, `LIFT ${transport.id}: ${State.STOP} ${transport.point.at_level}`);
 
             this.printOnConsole(transport, logs)
 
-            if (transport.direction === State.DOWN) console.log(`LIFT ${transport.id}: GO ${State.DOWN}`)
-            if (transport.direction === State.UP) console.log(`LIFT ${transport.id}: GO ${State.UP}`)
+            if (transport.direction === State.DOWN) this.setRoute(transport, `LIFT ${transport.id}: GO ${State.DOWN}`)
+            if (transport.direction === State.UP) this.setRoute(transport, `LIFT ${transport.id}: GO ${State.UP}`)
             return
         }
 
@@ -152,9 +170,9 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
             transport.direction = State.DOWN
             const logs = this.collectItems(transport)
             if (logs && logs.length > 0)
-                console.log(`LIFT ${transport.id}: ${State.STOP} ${transport.point.at_level}`);
+                this.setRoute(transport, `LIFT ${transport.id}: ${State.STOP} ${transport.point.at_level}`);
             this.printOnConsole(transport, logs)
-            console.log(`LIFT ${transport.id}: GO ${State.DOWN}`);
+            this.setRoute(transport, `LIFT ${transport.id}: GO ${State.DOWN}`);
         }
         else {
 
@@ -162,17 +180,16 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
             const logs = this.collectItems(transport)
 
             if (logs && logs.length > 0)
-                console.log(`LIFT ${transport.id}: ${State.STOP} ${transport.point.at_level}`);
+                this.setRoute(transport, `LIFT ${transport.id}: ${State.STOP} ${transport.point.at_level}`);
 
             this.printOnConsole(transport, logs)
-            console.log(`LIFT ${transport.id}: GO ${State.UP}`);
+            this.setRoute(transport, `LIFT ${transport.id}: GO ${State.UP}`);
         }
     }
 
     private printOnConsole(transport: any, logs: any) {
         if (logs && logs.length > 0) {
-            // console.log(`LIFT ${transport.id}: ${State.STOP} ${transport.point.at_level}`);
-            logs.forEach(log => console.log(log));
+            logs.forEach(log => this.setRoute(transport, log));
         }
     }
     private update(transport: any, level: number) {
@@ -184,20 +201,20 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
         if (transport.direction) collectedLogs = this.collectItems(transport)
 
         if (transport.capacity == 0) transport.direction = null
-        
+
         if (alightedLogs && alightedLogs.length > 0) {
 
-            console.log(`LIFT ${transport.id}: ${State.STOP} ${transport.point.at_level}`);
+            this.setRoute(transport, `LIFT ${transport.id}: ${State.STOP} ${transport.point.at_level}`);
 
             this.printOnConsole(transport, alightedLogs)
             if (collectedLogs && collectedLogs.length > 0) {
-                collectedLogs.forEach(log => console.log(log));
+                collectedLogs.forEach(log => this.setRoute(transport, log));
             }
             return
         }
 
         if (collectedLogs && collectedLogs.length > 0) {
-            console.log(`LIFT ${transport.id}: ${State.STOP} ${transport.point.at_level}`);
+            this.setRoute(transport, `LIFT ${transport.id}: ${State.STOP} ${transport.point.at_level}`);
             this.printOnConsole(transport, collectedLogs)
         }
     }
@@ -227,8 +244,6 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
         transport.itemsIn = transport.itemsIn.filter(item => item.goto_level !== transport.point.at_level)
         transport.capacity = !transport.itemsIn ? 0 : transport.itemsIn.length
 
-        // if (transport.capacity == 0) transport.direction = null
-
         return logs
     }
 
@@ -248,8 +263,6 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
 
                 const item = items[i]
 
-                // logs.push('ff=',item.id, item.state);
-
                 if (item.state && (item.state === State.ENTER || item.state === State.LEAVE)) continue
 
                 if (!transport.isValid()) return logs;
@@ -260,7 +273,7 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
                     item.state = State.ENTER
                     transport.capacity = transport.itemsIn.length;
                     logs.push(`LIFT ${transport.id}: PASSENGER ${item.id} ${State.ENTER}`);
-                    // items[i]=item
+
                     continue
                 }
 
@@ -280,7 +293,7 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
                     transport.itemsIn.push(item)
                     transport.capacity = transport.itemsIn.length;
                     logs.push(`LIFT ${transport.id}: PASSENGER ${item.id} ${State.ENTER}`);
-                    // items[i]=item
+
                     continue
                 }
 
@@ -452,49 +465,27 @@ export class SmartLift extends ITransportService {
     }
 
     private performTransports() {
-
-        // let n = 1
         while (!this.routeOptimizer.isMissionCompleted()) {
             for (const transport of this.transports) {
-                const route = this.routeOptimizer.getRoute(transport)
-                // break
+                this.routeOptimizer.getRoute(transport)
             }
-
-            // n++
-
-            // if (n > 1000) break;
         }
 
+        this.printOutRoutes(this.routeOptimizer.getRoutes())
     }
 
+    public printOutRoutes(routes: any[]) {
+        routes.forEach(item => {
+            console.log()
+            item.forEach(log => {
+                console.log(log);
+            });
+        });
+    }
 
     public setRouteOptimizer(routeOptimizer: IRouteOptimizer): void {
         this.routeOptimizer = routeOptimizer
     }
-
-    goDown() {
-
-    }
-    goUp() {
-
-    }
-
-    stop() {
-
-    }
-
-    passengerIn() {
-
-    }
-
-    passengerOut() {
-
-    }
-
-    finish() {
-
-    }
-
 }
 
 export class LiftRange extends IRule {
@@ -521,7 +512,6 @@ export class LiftCapacity extends IRule {
     }
     isValid(transport: Transport) {
         if (transport.capacity < this.capacity) return true
-
         return false
     }
 }
