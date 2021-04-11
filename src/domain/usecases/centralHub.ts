@@ -58,28 +58,11 @@ export class LiftNotifier extends Notifier {
             return true
 
         return false
-    }
-
-    // public goUp(): void {
-
-    // }
-
-    // public stop(): void {
-
-    // }
-
-    // public pessangerIn(): void {
-
-    // }
-
-    // public pessangerOut(): void {
-
-    // }
+    }    
 }
 
 export class LiftCentralHub implements CentralHubFactory {
-
-    // protected hub = new Array();
+ 
     protected passengerNotifier: PassengerNotifier
     protected liftNotifier: LiftNotifier
     protected notifiers = []
