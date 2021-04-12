@@ -12,7 +12,7 @@ export class ConsoleUI {
 
         //passengers. C:/Users/Komil/source/repos/lift-plan/files/passengers.csv
         //state. C:/Users/Komil/source/repos/lift-plan/files/states/state_9.hcl
-
+        // npm run plan C:/Users/Komil/source/repos/interview/lift-travel-plan/files/states/state_9.hcl
 
         // TODO! it needs to create Delivery Factory Pattern to cover all of this bottom.
 

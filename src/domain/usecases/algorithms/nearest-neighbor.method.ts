@@ -191,6 +191,11 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
     private updateMatrix(point: any) {
         if (!this.matrix[point.at_level - 1][point.goto_level - 1]) return
         
+        const items = this.matrix[point.at_level - 1][point.goto_level - 1].filter(item => item.id !== point.id)
+        if (items.length === 0) this.matrix[point.at_level - 1][point.goto_level - 1] = null
+        else
+            this.matrix[point.at_level - 1][point.goto_level - 1] = items
+        
         this.updateWaiters()
     }
 
