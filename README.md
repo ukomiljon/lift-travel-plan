@@ -5,6 +5,16 @@
 ## Description
 This is for simulation lift travel plan that is developed on nodejs typescript command line program that prints out the travel plan of the lift according to the states of the lift and passengers.
 
+## Installation
+
+```bash
+$ npm install
+```
+## Running the app
+```
+$ npm run plan path-to-state-file
+```
+
 ## Inputs
 
 There are 2 files that you need for this question
