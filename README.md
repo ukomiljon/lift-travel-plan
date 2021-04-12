@@ -104,3 +104,6 @@ LIFT 2: PASSENGER 3 LEAVE
 LIFT 2: GO DOWN
 LIFT 2: STOP 1
 ```
+
+## Clean Architecture
+![Lift Travel Plan (5)](https://user-images.githubusercontent.com/16934572/114427575-ccc5c680-9bed-11eb-8155-ee03921b5a53.png)
