@@ -4,7 +4,7 @@
   "description": "Question 1: Programming. Find the shortest path algorithm for lift problem.",
   "main": "app.ts",
   "scripts": {
-    "plan": "node --loader ts-node/esm ./src/main.ts"     
+    "plan": "node --loader ts-node/esm ./src/main.ts"
   },
   "author": "Komiljon Usarov",
   "license": "ISC",
