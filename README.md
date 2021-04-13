@@ -14,6 +14,7 @@ $ npm install
 ```
 $ npm run plan path-to-state-file
 ```
+for example: npm run plan C:/Users/Komil/source/repos/interviews/lift-travel-plan/files/states/state_9.hcl
 
 ## Inputs
 
