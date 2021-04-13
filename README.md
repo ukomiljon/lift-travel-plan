@@ -2,7 +2,8 @@
 
 ### Based on Clean Architecture and design pattern with typescript nodejs
 
-![Lift Travel Plan (5)](https://user-images.githubusercontent.com/16934572/114427575-ccc5c680-9bed-11eb-8155-ee03921b5a53.png)
+![Lift Travel Plan-Page-1](https://user-images.githubusercontent.com/16934572/114550203-84151880-9c94-11eb-94e9-61f4c708d8ad.png)
+
 
 ## Description
 This is for simulation lift travel plan that is developed on nodejs typescript command line program that prints out the travel plan of the lift according to the states of the lift and passengers.
