@@ -4,7 +4,7 @@ import { StateFileRepository } from "../../data/file-repositories/state-file.rep
 import { StateService } from "../../domain/services/implementations/state.service";
 import { NearestNeighborAlgorithm } from "../../domain/usecases/algorithms/nearest-neighbor.method";
 import { CentralHubFactory, LiftCentralHub, LiftNotifier, PassengerNotifier } from "../../domain/usecases/centralHub";
-import { LiftCapacity, LiftRange } from "../../domain/usecases/rulels";
+import { LiftCapacity, LiftRange } from "../../domain/usecases/rules";
 import { Lift, LiftTransport, Transport } from "../../domain/usecases/transportFactory";
 
 export class ConsoleUI {

@@ -1,8 +1,6 @@
-import { IVisitor } from "../entities/interfaces/iVisitor";
-import { Passenger } from "../entities/passenger";
-import { LiftPassenger } from "../entities/state";
+ 
 
-import { ITransportService, SmartLift, TransportFactory } from "./transportFactory";
+import { ITransportService } from "./transportFactory";
 
 export abstract class Notifier {
     protected centralHub: CentralHub;
