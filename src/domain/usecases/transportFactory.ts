@@ -1,4 +1,8 @@
- 
+
+/**
+ * Represented interface of Transport Factory
+ * @method create 
+ */
 export abstract class TransportFactory {
     public abstract create(): ITransportService;
 }

@@ -19,9 +19,15 @@ $ npm run plan path-to-state-file
 ```
 for example: npm run plan C:/Users/Komil/source/repos/interviews/lift-travel-plan/files/states/state_9.hcl
 
+## Generate documentation using typedoc
+```
+$ npx typedoc src
+```
+
+
 ## Inputs
 
-There are 2 files that you need for this question
+There are 2 files 
  - [passengers.csv](https://s3-ap-southeast-1.amazonaws.com/static.propine.com/passengers.csv)
  - [states.zip](https://s3-ap-southeast-1.amazonaws.com/static.propine.com/states.zip)
 
