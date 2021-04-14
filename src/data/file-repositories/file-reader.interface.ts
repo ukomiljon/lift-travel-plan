@@ -7,11 +7,7 @@ import fs from 'fs';
  * Represented interface of File Reader
  * @constructor
  * @param {string} path - the location of the file where to be read
- */
-
-/**
- * 
- */
+ */ 
 export abstract class IFileReader {
     protected path: string
     constructor(path: string) {

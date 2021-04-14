@@ -1,0 +1,256 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>app</title>
+	<meta name="description" content="Documentation for app">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">app</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>app</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#lift-travel-plan" id="lift-travel-plan" style="color: inherit; text-decoration: none;">
+					<h1>Lift Travel Plan</h1>
+				</a>
+				<a href="#based-on-clean-architecture-and-design-pattern-with-typescript-nodejs" id="based-on-clean-architecture-and-design-pattern-with-typescript-nodejs" style="color: inherit; text-decoration: none;">
+					<h3>Based on Clean Architecture and design pattern with typescript nodejs</h3>
+				</a>
+				<p><img src="https://user-images.githubusercontent.com/16934572/114550203-84151880-9c94-11eb-94e9-61f4c708d8ad.png" alt="Lift Travel Plan-Page-1"></p>
+				<a href="#description" id="description" style="color: inherit; text-decoration: none;">
+					<h2>Description</h2>
+				</a>
+				<p>This is for simulation lift travel plan that is developed on nodejs typescript command line program that prints out the travel plan of the lift according to the states of the lift and passengers.</p>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
+				<pre><code class="language-bash"><span style="color: #000000">$ npm install</span>
+</code></pre>
+				<a href="#running-the-app" id="running-the-app" style="color: inherit; text-decoration: none;">
+					<h2>Running the app</h2>
+				</a>
+				<pre><code><span style="color: #001080">$</span><span style="color: #000000"> </span><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">run</span><span style="color: #000000"> </span><span style="color: #001080">plan</span><span style="color: #000000"> </span><span style="color: #001080">path</span><span style="color: #000000">-</span><span style="color: #001080">to</span><span style="color: #000000">-</span><span style="color: #001080">state</span><span style="color: #000000">-</span><span style="color: #001080">file</span>
+</code></pre>
+				<p>for example: npm run plan C:/Users/Komil/source/repos/interviews/lift-travel-plan/files/states/state_9.hcl</p>
+				<a href="#inputs" id="inputs" style="color: inherit; text-decoration: none;">
+					<h2>Inputs</h2>
+				</a>
+				<p>There are 2 files that you need for this question</p>
+				<ul>
+					<li><a href="https://s3-ap-southeast-1.amazonaws.com/static.propine.com/passengers.csv">passengers.csv</a></li>
+					<li><a href="https://s3-ap-southeast-1.amazonaws.com/static.propine.com/states.zip">states.zip</a></li>
+				</ul>
+				<a href="#passenger-information" id="passenger-information" style="color: inherit; text-decoration: none;">
+					<h3>Passenger information</h3>
+				</a>
+				<p>Passengers <a href="https://s3-ap-southeast-1.amazonaws.com/static.propine.com/passengers.csv">CSV</a> file which describes the passengers for the lift. Each row corresponds to one passenger. There are 25 passengers in total.</p>
+				<ul>
+					<li>id: The identification for the passenger.</li>
+					<li>health: The health state of the passenger. They are either healthy or disabled.</li>
+					<li>age: The age of the passenger. Age 12 and below is regarded as children.</li>
+					<li>family_id: If the family_id is the same, the passengers belong to the same family. People not from the same family are regarded as strangers.</li>
+				</ul>
+				<a href="#lift-states" id="lift-states" style="color: inherit; text-decoration: none;">
+					<h3>Lift states</h3>
+				</a>
+				<p>Lift states are the starting state for a distinct scenario. There are 10 state files included in the <a href="https://s3-ap-southeast-1.amazonaws.com/static.propine.com/states.zip">states.zip</a> file which describes the starting state of the lift and passengers. The file are in <a href="https://github.com/hashicorp/hcl">HCL</a> format. Each file contains 2 types of clauses: passenger and lift.</p>
+				<pre><code class="language-hcl"><span style="color: #0000FF">passenger</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">id</span><span style="color: #000000"> = </span><span style="color: #098658">21</span>
+<span style="color: #000000">  </span><span style="color: #001080">goto_level</span><span style="color: #000000"> = </span><span style="color: #098658">7</span>
+<span style="color: #000000">  </span><span style="color: #001080">at_level</span><span style="color: #000000"> = </span><span style="color: #098658">1</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<p>The passenger clause starts with the keyword <code>passenger</code>. The example means passenger id 21 is currently at level 1, and wants to go to level 7.</p>
+				<pre><code class="language-hcl"><span style="color: #0000FF">lift</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">id</span><span style="color: #000000"> = </span><span style="color: #098658">1</span>
+<span style="color: #000000">  </span><span style="color: #001080">at_level</span><span style="color: #000000"> = </span><span style="color: #098658">8</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<p>The lift clause starts with the keyword <code>lift</code>. The example means lift id 1 is at level 8.</p>
+				<p>You may assume all the passengers pressed the lift button at the same time.</p>
+				<a href="#expected-output" id="expected-output" style="color: inherit; text-decoration: none;">
+					<h2>Expected Output</h2>
+				</a>
+				<p>The travel plan should follow the shortest path algorithm, which follows the simple heuristic where the lift will go to the nearest passenger first and move in the same direction and stop to collect or alight passengers.</p>
+				<p>The program should output a list of travel instructions for each of the 10 scenarios as defined in the 10 state files. The lift will follow the instructions in order from top to bottom. An instruction follows the format below</p>
+				<pre><code><span style="color: #0070C1">LIFT</span><span style="color: #000000"> &lt;</span><span style="color: #0070C1">LIFT_ID</span><span style="color: #000000">&gt;: &lt;</span><span style="color: #267F99">COMMAND</span><span style="color: #000000">&gt;</span>
+</code></pre>
+				<p><code>LIFT_ID</code> denotes the lift id from the lift state clauses. Assume each lift can fit a maximum of <strong>3</strong> persons. At the start they are stationary and empty.</p>
+				<p>The commands are</p>
+				<ul>
+					<li><code>STOP &lt;LEVEL&gt;</code>: Tells the lift to stop at a level. <code>LEVEL</code> is an integer</li>
+					<li><code>GO &lt;UP|DOWN&gt;</code>: Tells the lift to move in a direction. The valid values are <code>UP</code> or <code>DOWN</code></li>
+					<li><code>PASSENGER &lt;PASSENGER_ID&gt; &lt;ENTER|LEAVE&gt;</code>: Tells the passenger to enter or leave. <code>PASSENGER_ID</code> refers to the id of the passenger as defined in the state file. The valid values are <code>ENTER</code> or <code>LEAVE</code></li>
+				</ul>
+				<p>Following a <code>GO</code> command, the next command must be a <code>STOP</code> command.</p>
+				<p>Following a <code>STOP</code> command, the next command must be a <code>GO</code> or <code>PASSENGER</code> command, or nothing should follow if it is the last instruction.</p>
+				<p>The ground floor is standardised as level 1.</p>
+				<p>The last instruction must be a return to the ground floor where it stops at level 1. In a multi lift scenario, print out instructions for the first lift, followed by a blank line, then print out instructions for the following lifts.</p>
+				<p>An example instruction is shown below</p>
+				<pre><code><span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">: </span><span style="color: #0070C1">GO</span><span style="color: #000000"> </span><span style="color: #0070C1">DOWN</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">: </span><span style="color: #0070C1">STOP</span><span style="color: #000000"> </span><span style="color: #098658">1</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">: </span><span style="color: #0070C1">PASSENGER</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> </span><span style="color: #0070C1">ENTER</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">: </span><span style="color: #0070C1">PASSENGER</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000"> </span><span style="color: #0070C1">ENTER</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">: </span><span style="color: #0070C1">GO</span><span style="color: #000000"> </span><span style="color: #0070C1">UP</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">: </span><span style="color: #0070C1">STOP</span><span style="color: #000000"> </span><span style="color: #098658">10</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">: </span><span style="color: #0070C1">PASSENGER</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000"> </span><span style="color: #0070C1">LEAVE</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">: </span><span style="color: #0070C1">GO</span><span style="color: #000000"> </span><span style="color: #0070C1">UP</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">: </span><span style="color: #0070C1">STOP</span><span style="color: #000000"> </span><span style="color: #098658">17</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">: </span><span style="color: #0070C1">PASSENGER</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000"> </span><span style="color: #0070C1">LEAVE</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">: </span><span style="color: #0070C1">GO</span><span style="color: #000000"> </span><span style="color: #0070C1">DOWN</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">1</span><span style="color: #000000">: </span><span style="color: #0070C1">STOP</span><span style="color: #000000"> </span><span style="color: #098658">1</span>
+
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000">: </span><span style="color: #0070C1">GO</span><span style="color: #000000"> </span><span style="color: #0070C1">UP</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000">: </span><span style="color: #0070C1">STOP</span><span style="color: #000000"> </span><span style="color: #098658">2</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000">: </span><span style="color: #0070C1">PASSENGER</span><span style="color: #000000"> </span><span style="color: #098658">3</span><span style="color: #000000"> </span><span style="color: #0070C1">ENTER</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000">: </span><span style="color: #0070C1">GO</span><span style="color: #000000"> </span><span style="color: #0070C1">UP</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000">: </span><span style="color: #0070C1">STOP</span><span style="color: #000000"> </span><span style="color: #098658">4</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000">: </span><span style="color: #0070C1">PASSENGER</span><span style="color: #000000"> </span><span style="color: #098658">3</span><span style="color: #000000"> </span><span style="color: #0070C1">LEAVE</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000">: </span><span style="color: #0070C1">GO</span><span style="color: #000000"> </span><span style="color: #0070C1">DOWN</span>
+<span style="color: #0070C1">LIFT</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000">: </span><span style="color: #0070C1">STOP</span><span style="color: #000000"> </span><span style="color: #098658">1</span>
+</code></pre>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/controller_console_console.html">controller/console/console</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/data_file_repositories_file_reader_interface.html">data/file-<wbr>repositories/file-<wbr>reader.interface</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/data_file_repositories_passenger_file_repository.html">data/file-<wbr>repositories/passenger-<wbr>file.repository</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/data_file_repositories_state_file_repository.html">data/file-<wbr>repositories/state-<wbr>file.repository</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/domain_entities_interfaces_istate.html">domain/entities/interfaces/i<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/domain_entities_interfaces_ivisitor.html">domain/entities/interfaces/i<wbr>Visitor</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/domain_entities_passenger.html">domain/entities/passenger</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/domain_entities_state.html">domain/entities/state</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/domain_repository_interfaces_passenger_repository_interface.html">domain/repository-<wbr>interfaces/passenger-<wbr>repository.interface</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/domain_repository_interfaces_state_repository_interface.html">domain/repository-<wbr>interfaces/state-<wbr>repository.interface</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/domain_services_implementations_passenger_service.html">domain/services/implementations/passenger.service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/domain_services_implementations_state_service.html">domain/services/implementations/state.service</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/domain_services_passenger_service_interface.html">domain/services/passenger-<wbr>service.interface</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/domain_services_state_service_interface.html">domain/services/state-<wbr>service.interface</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/domain_usecases_algorithms_nearest_neighbor_method.html">domain/usecases/algorithms/nearest-<wbr>neighbor.method</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/domain_usecases_centralhub.html">domain/usecases/central<wbr>Hub</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/domain_usecases_rules.html">domain/usecases/rules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/domain_usecases_transportfactory.html">domain/usecases/transport<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/main.html">main</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
