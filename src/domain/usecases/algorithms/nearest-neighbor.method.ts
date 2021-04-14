@@ -24,6 +24,11 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
 
     public getRoutes() {
 
+        this.finalizeRoute()
+        return this.routes
+    }
+
+    private finalizeRoute() {
         this.transports.forEach(element => {
             if (element.point.at_level != 1) {
                 element.point.at_level = 1
@@ -32,7 +37,6 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
 
             }
         });
-        return this.routes
     }
 
     private setRoute(transport: any, route: any) {
@@ -180,22 +184,22 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
         }
     }
 
-    private isThereTask(){
-        
+    private isThereTask() {
+
         for (const item of this.points) {
             if (!item.state) return true
         }
-        
+
     }
 
     private updateMatrix(point: any) {
         if (!this.matrix[point.at_level - 1][point.goto_level - 1]) return
-        
+
         const items = this.matrix[point.at_level - 1][point.goto_level - 1].filter(item => item.id !== point.id)
         if (items.length === 0) this.matrix[point.at_level - 1][point.goto_level - 1] = null
         else
             this.matrix[point.at_level - 1][point.goto_level - 1] = items
-        
+
         this.updateWaiters()
     }
 

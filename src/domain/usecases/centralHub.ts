@@ -1,4 +1,4 @@
- 
+
 
 import { ITransportService } from "./transportFactory";
 
@@ -56,11 +56,11 @@ export class LiftNotifier extends Notifier {
             return true
 
         return false
-    }    
+    }
 }
 
 export class LiftCentralHub implements CentralHubFactory {
- 
+
     protected passengerNotifier: PassengerNotifier
     protected liftNotifier: LiftNotifier
     protected notifiers = []
@@ -75,6 +75,6 @@ export class LiftCentralHub implements CentralHubFactory {
     notify(notifier: any, notification: any): void {
         this.liftNotifier.notify(notifier)
     }
- 
+
 }
 
