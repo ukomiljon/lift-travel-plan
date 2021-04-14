@@ -1,7 +1,7 @@
 
 import csvParser from 'csv-parser';
-var hclParser = require("hcl-parser")
 import fs from 'fs';
+var hclParser = require("hcl-parser")
 
 /**
  * Represented interface of File Reader
@@ -13,17 +13,20 @@ export abstract class IFileReader {
     constructor(path: string) {
         this.path = path
     }
+    /**
+     * abstract method (factory method) to change logic of reading from different type of file
+     * @returns returning result from reading of file 
+     */
     abstract read(): any;
 }
 
 
-
+/**
+ * csv reader implimentation based in 
+ */
 export class CsvReader extends IFileReader {
 
-    /**
-     * 
-     * @returns 
-     */
+   
     async read() {
         const results = [];
         try {
