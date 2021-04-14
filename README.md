@@ -24,7 +24,7 @@ for example: npm run plan C:/Users/Komil/source/repos/interviews/lift-travel-pla
 $ npx typedoc src
 ```
 
-Documendation: https://ukomiljon.github.io/lift-travel-plan/index.html
+Documentation: https://ukomiljon.github.io/lift-travel-plan/index.html
 
 
 ## Inputs
