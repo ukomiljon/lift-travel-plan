@@ -4,6 +4,9 @@
  * @method create 
  */
 export abstract class TransportFactory {
+    /**
+     * @method 
+     */
     public abstract create(): ITransportService;
 }
 
