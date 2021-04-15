@@ -1,8 +1,12 @@
 # Lift Travel Plan
 
-### Based on Clean Architecture and design pattern with typescript nodejs
+## Based on Clean Architecture and design pattern with typescript nodejs
 
-![Lift Travel Plan-Page-1](https://user-images.githubusercontent.com/16934572/114550203-84151880-9c94-11eb-94e9-61f4c708d8ad.png)
+![Lift Travel Plan-Clean Architecture](https://user-images.githubusercontent.com/16934572/114799569-7661af00-9dca-11eb-9259-d031f1e5917f.png)
+
+## Use cases architecture
+
+![Lift Travel Plan-Use cases (1)](https://user-images.githubusercontent.com/16934572/114876058-87450b80-9e30-11eb-8034-870c998c4d82.png)
 
 
 ## Description
@@ -33,7 +37,7 @@ There are 2 files
  - [passengers.csv](https://s3-ap-southeast-1.amazonaws.com/static.propine.com/passengers.csv)
  - [states.zip](https://s3-ap-southeast-1.amazonaws.com/static.propine.com/states.zip)
 
-### Passenger information
+## Passenger information
 Passengers [CSV](https://s3-ap-southeast-1.amazonaws.com/static.propine.com/passengers.csv) file which describes the passengers for the lift. Each row corresponds to one passenger. There are 25 passengers in total.
 
  - id: The identification for the passenger.
@@ -41,7 +45,7 @@ Passengers [CSV](https://s3-ap-southeast-1.amazonaws.com/static.propine.com/pass
  - age: The age of the passenger. Age 12 and below is regarded as children.
  - family_id: If the family_id is the same, the passengers belong to the same family. People not from the same family are regarded as strangers.
 
-### Lift states
+## Lift states
 
 Lift states are the starting state for a distinct scenario. There are 10 state files included in the [states.zip](https://s3-ap-southeast-1.amazonaws.com/static.propine.com/states.zip) file which describes the starting state of the lift and passengers. The file are in [HCL](https://github.com/hashicorp/hcl) format. Each file contains 2 types of clauses: passenger and lift.
 
