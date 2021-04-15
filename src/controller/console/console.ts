@@ -5,7 +5,7 @@ import { StateService } from "../../domain/services/implementations/state.servic
 import { NearestNeighborAlgorithm } from "../../domain/usecases/algorithms/nearest-neighbor.method";
 import { CentralHubFactory, LiftCentralHub, LiftNotifier, PassengerNotifier } from "../../domain/usecases/centralHub";
 import { LiftCapacity, LiftRange } from "../../domain/usecases/rules";
-import { Lift, LiftTransport, Transport } from "../../domain/usecases/transportFactory";
+import { Lift, LiftTransportService, Transport } from "../../domain/usecases/transportFactory";
 
 export class ConsoleUI {
     async run(...paths) {
@@ -20,7 +20,7 @@ export class ConsoleUI {
 
         const statesData = await stateService.read()
         const transports = this.populateTransports(statesData.lift)
-        const liftTransport = new LiftTransport(transports).create()
+        const liftTransport = new LiftTransportService(transports).create()
         liftTransport.setRouteOptimizer(new NearestNeighborAlgorithm())
 
         const passengerNotifier = new PassengerNotifier()

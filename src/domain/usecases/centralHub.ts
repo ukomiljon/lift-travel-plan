@@ -3,29 +3,25 @@
 import { ITransportService } from "./transportFactory";
 
 export abstract class Notifier {
-    protected centralHub: CentralHub;
+    protected centralHub: CentralHubFactory;
 
-    constructor(centralHub: CentralHub = null) {
+    constructor(centralHub: CentralHubFactory = null) {
         this.centralHub = centralHub;
     }
 
-    public setCentralHub(centralHub: CentralHub): void {
+    public setCentralHub(centralHub: CentralHubFactory): void {
         this.centralHub = centralHub;
     }
 }
 
-export interface CentralHub {
-    notify(notifier: any, notification: any): void;
-}
-
-export abstract class CentralHubFactory implements CentralHub {
+export abstract class CentralHubFactory {
     notify(notifier: any, notification: any): void {
     }
 }
 
 export class PassengerNotifier extends Notifier {
 
-    constructor(centralHub: CentralHub = null) {
+    constructor(centralHub: CentralHubFactory = null) {
         super(centralHub);
     }
 
@@ -37,7 +33,7 @@ export class PassengerNotifier extends Notifier {
 
 export class LiftNotifier extends Notifier {
     protected notifiers = []
-    constructor(centralHub: CentralHub = null) {
+    constructor(centralHub: CentralHubFactory = null) {
         super(centralHub);
     }
 

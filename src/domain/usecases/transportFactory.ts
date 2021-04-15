@@ -1,16 +1,15 @@
 
 /**
- * Represented interface of Transport Factory
- * @method create 
+ * Represented interface of TransportServiceFactory 
  */
-export abstract class TransportFactory {
+export abstract class TransportServiceFactory {
     /**
-     * @method 
+     * @method create
      */
     public abstract create(): ITransportService;
 }
 
-export class LiftTransport extends TransportFactory {
+export class LiftTransportService extends TransportServiceFactory {
 
     protected transports: Transport[];
     protected maxLevel: number;

@@ -22,7 +22,7 @@ export class NearestNeighborAlgorithm implements IRouteOptimizer {
         return this.matrix
     }
 
-    public getRoutes() {
+    public getRoutes():any[] {
 
         this.finalizeRoute()
         return this.routes
