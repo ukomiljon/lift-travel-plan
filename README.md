@@ -1,29 +1,29 @@
 # Lift Travel Plan
 
-### Based on Clean Architecture and design pattern with typescript nodejs
+## Based on Clean Architecture and design pattern with typescript nodejs
 
 ![Lift Travel Plan-Clean Architecture](https://user-images.githubusercontent.com/16934572/114799569-7661af00-9dca-11eb-9259-d031f1e5917f.png)
 
-### Use cases architecture
+## Use cases architecture
 
 ![Lift Travel Plan-Use cases (1)](https://user-images.githubusercontent.com/16934572/114876058-87450b80-9e30-11eb-8034-870c998c4d82.png)
 
 
-### Description
+## Description
 This is for simulation lift travel plan that is developed on nodejs typescript command line program that prints out the travel plan of the lift according to the states of the lift and passengers.
 
-### Installation
+## Installation
 
 ```bash
 $ npm install
 ```
-### Running the app
+## Running the app
 ```
 $ npm run plan path-to-state-file
 ```
 for example: npm run plan C:/Users/Komil/source/repos/interviews/lift-travel-plan/files/states/state_9.hcl
 
-### Generate documentation using typedoc
+## Generate documentation using typedoc
 ```
 $ npx typedoc src
 ```
@@ -31,13 +31,13 @@ $ npx typedoc src
 Documentation: https://ukomiljon.github.io/lift-travel-plan/index.html
 
 
-### Inputs
+## Inputs
 
 There are 2 files 
  - [passengers.csv](https://s3-ap-southeast-1.amazonaws.com/static.propine.com/passengers.csv)
  - [states.zip](https://s3-ap-southeast-1.amazonaws.com/static.propine.com/states.zip)
 
-### Passenger information
+## Passenger information
 Passengers [CSV](https://s3-ap-southeast-1.amazonaws.com/static.propine.com/passengers.csv) file which describes the passengers for the lift. Each row corresponds to one passenger. There are 25 passengers in total.
 
  - id: The identification for the passenger.
@@ -45,7 +45,7 @@ Passengers [CSV](https://s3-ap-southeast-1.amazonaws.com/static.propine.com/pass
  - age: The age of the passenger. Age 12 and below is regarded as children.
  - family_id: If the family_id is the same, the passengers belong to the same family. People not from the same family are regarded as strangers.
 
-### Lift states
+## Lift states
 
 Lift states are the starting state for a distinct scenario. There are 10 state files included in the [states.zip](https://s3-ap-southeast-1.amazonaws.com/static.propine.com/states.zip) file which describes the starting state of the lift and passengers. The file are in [HCL](https://github.com/hashicorp/hcl) format. Each file contains 2 types of clauses: passenger and lift.
 
