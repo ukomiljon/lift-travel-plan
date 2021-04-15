@@ -4,26 +4,26 @@
 
 ![Lift Travel Plan-Clean Architecture](https://user-images.githubusercontent.com/16934572/114799569-7661af00-9dca-11eb-9259-d031f1e5917f.png)
 
-## Use cases architecture
+### Use cases architecture
 
 ![Lift Travel Plan-Use cases (1)](https://user-images.githubusercontent.com/16934572/114876058-87450b80-9e30-11eb-8034-870c998c4d82.png)
 
 
-## Description
+### Description
 This is for simulation lift travel plan that is developed on nodejs typescript command line program that prints out the travel plan of the lift according to the states of the lift and passengers.
 
-## Installation
+### Installation
 
 ```bash
 $ npm install
 ```
-## Running the app
+### Running the app
 ```
 $ npm run plan path-to-state-file
 ```
 for example: npm run plan C:/Users/Komil/source/repos/interviews/lift-travel-plan/files/states/state_9.hcl
 
-## Generate documentation using typedoc
+### Generate documentation using typedoc
 ```
 $ npx typedoc src
 ```
@@ -31,7 +31,7 @@ $ npx typedoc src
 Documentation: https://ukomiljon.github.io/lift-travel-plan/index.html
 
 
-## Inputs
+### Inputs
 
 There are 2 files 
  - [passengers.csv](https://s3-ap-southeast-1.amazonaws.com/static.propine.com/passengers.csv)
