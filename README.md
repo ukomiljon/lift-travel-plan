@@ -4,6 +4,11 @@
 
 ![Lift Travel Plan-Clean Architecture](https://user-images.githubusercontent.com/16934572/114799569-7661af00-9dca-11eb-9259-d031f1e5917f.png)
 
+## Use cases architecture
+
+![Lift Travel Plan-Use cases (1)](https://user-images.githubusercontent.com/16934572/114876058-87450b80-9e30-11eb-8034-870c998c4d82.png)
+
+
 ## Description
 This is for simulation lift travel plan that is developed on nodejs typescript command line program that prints out the travel plan of the lift according to the states of the lift and passengers.
 
