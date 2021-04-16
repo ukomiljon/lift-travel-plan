@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>CentralHub | app</title>
+	<title>TransportServiceFactory | app</title>
 	<meta name="description" content="Documentation for app">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,31 +55,37 @@
 					<a href="../modules.html">app</a>
 				</li>
 				<li>
-					<a href="../modules/domain_usecases_centralhub.html">domain/usecases/centralHub</a>
+					<a href="../modules/domain_usecases_transportfactory.html">domain/usecases/transportFactory</a>
 				</li>
 				<li>
-					<a href="domain_usecases_centralhub.centralhub.html">CentralHub</a>
+					<a href="domain_usecases_transportfactory.transportservicefactory.html">TransportServiceFactory</a>
 				</li>
 			</ul>
-			<h1>Interface CentralHub</h1>
+			<h1>Class TransportServiceFactory</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Represented interface of TransportServiceFactory</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">CentralHub</span>
+						<span class="target">TransportServiceFactory</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<a href="domain_usecases_transportfactory.lifttransportservice.html" class="tsd-signature-type" data-tsd-kind="Class">LiftTransportService</a>
+							</li>
+						</ul>
 					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel">
-				<h3>Implemented by</h3>
-				<ul class="tsd-hierarchy">
-					<li><a href="../classes/domain_usecases_centralhub.centralhubfactory.html" class="tsd-signature-type" data-tsd-kind="Class">CentralHubFactory</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -87,39 +93,60 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="domain_usecases_transportfactory.transportservicefactory.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="domain_usecases_centralhub.centralhub.html#notify" class="tsd-kind-icon">notify</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="domain_usecases_transportfactory.transportservicefactory.html#create" class="tsd-kind-icon">create</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Transport<wbr>Service<wbr>Factory<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="domain_usecases_transportfactory.transportservicefactory.html" class="tsd-signature-type" data-tsd-kind="Class">TransportServiceFactory</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="domain_usecases_transportfactory.transportservicefactory.html" class="tsd-signature-type" data-tsd-kind="Class">TransportServiceFactory</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="notify" class="tsd-anchor"></a>
-					<h3>notify</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">notify<span class="tsd-signature-symbol">(</span>notifier<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, notification<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="create" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> create</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="domain_usecases_transportfactory.itransportservice.html" class="tsd-signature-type" data-tsd-kind="Class">ITransportService</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ukomiljon/lift-travel-plan/blob/420381b/src/domain/usecases/centralHub.ts#L18">domain/usecases/centralHub.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/ukomiljon/lift-travel-plan/blob/f9132a2/src/domain/usecases/transportFactory.ts#L9">domain/usecases/transportFactory.ts:9</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>notifier: <span class="tsd-signature-type">any</span></h5>
-								</li>
-								<li>
-									<h5>notification: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>method</dt>
+									<dd><p>create</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="domain_usecases_transportfactory.itransportservice.html" class="tsd-signature-type" data-tsd-kind="Class">ITransportService</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -176,13 +203,13 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/domain_usecases_algorithms_nearest_neighbor_method.html">domain/usecases/algorithms/nearest-<wbr>neighbor.method</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/domain_usecases_centralhub.html">domain/usecases/central<wbr>Hub</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/domain_usecases_rules.html">domain/usecases/rules</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/domain_usecases_transportfactory.html">domain/usecases/transport<wbr>Factory</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -192,33 +219,45 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/domain_usecases_centralhub.centralhubfactory.html" class="tsd-kind-icon">Central<wbr>Hub<wbr>Factory</a>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/domain_usecases_transportfactory.state.html" class="tsd-kind-icon">State</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/domain_usecases_centralhub.liftcentralhub.html" class="tsd-kind-icon">Lift<wbr>Central<wbr>Hub</a>
+						<a href="domain_usecases_transportfactory.irule.html" class="tsd-kind-icon">IRule</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/domain_usecases_centralhub.liftnotifier.html" class="tsd-kind-icon">Lift<wbr>Notifier</a>
+						<a href="domain_usecases_transportfactory.itransportservice.html" class="tsd-kind-icon">ITransport<wbr>Service</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/domain_usecases_centralhub.notifier.html" class="tsd-kind-icon">Notifier</a>
+						<a href="domain_usecases_transportfactory.lift.html" class="tsd-kind-icon">Lift</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/domain_usecases_centralhub.passengernotifier.html" class="tsd-kind-icon">Passenger<wbr>Notifier</a>
+						<a href="domain_usecases_transportfactory.lifttransportservice.html" class="tsd-kind-icon">Lift<wbr>Transport<wbr>Service</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="domain_usecases_transportfactory.smartlift.html" class="tsd-kind-icon">Smart<wbr>Lift</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="domain_usecases_transportfactory.transport.html" class="tsd-kind-icon">Transport</a>
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="domain_usecases_centralhub.centralhub.html" class="tsd-kind-icon">Central<wbr>Hub</a>
+					<li class="current tsd-kind-class tsd-parent-kind-module">
+						<a href="domain_usecases_transportfactory.transportservicefactory.html" class="tsd-kind-icon">Transport<wbr>Service<wbr>Factory</a>
 						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="domain_usecases_centralhub.centralhub.html#notify" class="tsd-kind-icon">notify</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="domain_usecases_transportfactory.transportservicefactory.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="domain_usecases_transportfactory.transportservicefactory.html#create" class="tsd-kind-icon">create</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/domain_usecases_transportfactory.irouteoptimizer.html" class="tsd-kind-icon">IRoute<wbr>Optimizer</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -229,14 +268,15 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 			</ul>
 		</div>
 	</div>
