@@ -3,8 +3,7 @@ import { IFileReader } from "./file-reader.interface";
 
 
 /**
- * Concrete StateFile Repository provides implementations of the IStateFileRepository implements IStateRepository {
- interface.
+ * Concrete StateFile Repository provides implementations of the IStateFileRepository
  */
 export class StateFileRepository implements IStateRepository {
     /**

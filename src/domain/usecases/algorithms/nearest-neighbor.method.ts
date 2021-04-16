@@ -1,5 +1,9 @@
 import { IRouteOptimizer, State } from "../transportFactory"
 
+/**
+ * Implimentation of Nearest Neighbor Algorithm
+ * it is uses to find aproximately optimize route solution for lift travel problem
+ */
 export class NearestNeighborAlgorithm implements IRouteOptimizer {
 
     protected matrix = new Array()
